@@ -13,7 +13,7 @@ field_path = os.path.join(dirname, 'picture')
 
 # LOAD IMAGE SOURCE
 wheat_img = cv2.imread(os.path.join(field_path, 'wheat7.jpg'), cv2.IMREAD_UNCHANGED)
-celurit_img = cv2.imread(os.path.join(field_path, 'celurit.jpg'), cv2.IMREAD_UNCHANGED)
+sickle_img = cv2.imread(os.path.join(field_path, 'sickle.jpg'), cv2.IMREAD_UNCHANGED)
 empty_field_img = cv2.imread(os.path.join(field_path, 'field.jpg'), cv2.IMREAD_UNCHANGED)
 raw_wheat_img = cv2.imread(os.path.join(field_path, 'raw wheat.jpg'), cv2.IMREAD_UNCHANGED)
 market_img = cv2.imread(os.path.join(field_path, 'market.jpg'), cv2.IMREAD_UNCHANGED)
@@ -73,9 +73,9 @@ def panen_gandum():
             pydirectinput.click()
             time.sleep(2)
             color = main_screen()
-            celurit_loc = image_detector(color, celurit_img)
-            if celurit_loc != None:
-                pyautogui.moveTo(celurit_loc[0] + 250 + 20, celurit_loc[1] + 100 + 10, duration=0.1)
+            sickle_loc = image_detector(color, sickle_img)
+            if sickle_loc != None:
+                pyautogui.moveTo(sickle_loc[0] + 250 + 20, sickle_loc[1] + 100 + 10, duration=0.1)
                 pydirectinput.mouseDown()
                 pyautogui.moveTo(field_loc[0] + 250 + 20, field_loc[1] + 100 + 10, duration=0.1)
                 pydirectinput.mouseUp()
